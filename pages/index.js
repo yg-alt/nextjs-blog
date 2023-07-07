@@ -33,19 +33,7 @@ export default function Home({ allPostsData, userList }) {
   )
 }
 
-// export async function getStaticProps() {
-//   const allPostsData = getSortedPostsData()
-//   const userList = await getUser()
-//   console.log('userList', userList)
-//   return {
-//     props: {
-//       allPostsData,
-//       userList,
-//     }
-//   }
-// }
-
-export async function getServerSideProps (context) {
+export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
   const userList = await getUser()
   return {
@@ -55,3 +43,14 @@ export async function getServerSideProps (context) {
     }
   }
 }
+
+// export async function getServerSideProps (context) {
+//   const allPostsData = getSortedPostsData()
+//   const userList = await getUser()
+//   return {
+//     props: {
+//       allPostsData,
+//       userList,
+//     }
+//   }
+// }
