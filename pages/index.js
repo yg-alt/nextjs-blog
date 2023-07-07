@@ -46,10 +46,8 @@ export default function Home({ allPostsData, userList }) {
 // }
 
 export async function getServerSideProps (context) {
-  console.log('context', context.query)
   const allPostsData = getSortedPostsData()
   const userList = await getUser()
-  console.log('userList', userList)
   return {
     props: {
       allPostsData,
